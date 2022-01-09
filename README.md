@@ -47,3 +47,22 @@ resultat :
 
 L’attaquant inonde le serveur DHCP avec des messages DHCPREQUEST afin de réserver toutes les adresses IP disponibles sur le serveur DHCP. L’attaquant doit utiliser une nouvelle adresse MAC pour chaque requête 
 
+## Manipulation :
+```cpp
+#tar –xvf dhcpstarv-0.2.1.tar.gz
+```
+![Capture d’écran 2021-12-20 143228 (2)](https://user-images.githubusercontent.com/85891554/148682658-4aa374db-60dd-4e24-af09-faf6207a4876.png)
+```cpp
+#cd dhcpstarv-0.2.1
+#./configure
+```
+![Capture d’écran 2021-12-30 131121](https://user-images.githubusercontent.com/85891554/148682702-642c7f90-0ccf-4d79-bdc7-473fa0c3085f.png)
+```cpp
+#make
+```
+![Capture d’écran 2022-01-09 134601](https://user-images.githubusercontent.com/85891554/148682745-d222fb6c-a63f-479c-b578-031b1a8c1277.png)
+```cpp
+#make install 
+```
+![Capture d’écran 2022-01-09 134631](https://user-images.githubusercontent.com/85891554/148682750-00da8427-69b5-4046-ade8-6229e73eaa12.png)
+Sur une autre machine, on va configurer le serveur DHCP
