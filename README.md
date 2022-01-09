@@ -70,7 +70,11 @@ Sur une autre machine, on a configurer le serveur DHCP
 _ configuration du dhcp _
 
 ![Capture d’écran 2022-01-09 135330](https://user-images.githubusercontent.com/85891554/148683028-cbb5c56d-1a0e-49c3-9c7d-2fda018eac72.png)
-
+on lance l attaque
+```cpp
+#sudo dhcpstarv -i eth0
+```
+![WhatsApp Image 2022-01-09 at 1 34 42 PM](https://user-images.githubusercontent.com/85891554/148684372-426ee539-375c-431b-9caa-86e8efd28704.jpeg)
 on observe sur WireShark l'envoie des demandes dhcp (dhcp discover)
 
 ![Capture d’écran 2022-01-09 135533](https://user-images.githubusercontent.com/85891554/148683036-7fe8905c-ab02-4d9f-8370-9c0ecd4f64a5.png)
@@ -85,7 +89,7 @@ Pour réaliser cette attaque, nous avons besoin de trois nœuds connectés à un
 GNS3) ou à un point d'accès sans fil. Le nœud attaquant sera la machine sur laquelle est installé le 
 système d'exploitation « Kali Linux »
 
-> les tables arp apres l'attaque 
+> les tables arp avant l'attaque 
 ![WhatsApp Image 2022-01-09 at 1 34 41 PM (1)](https://user-images.githubusercontent.com/85891554/148683986-43cd377d-b2d6-4ffa-9faa-92c455682e79.jpeg)
 ## Etape 1 : activer le routage dans le nœud attaquant (Kali Linux)
 Tester si le routage est activé en utilisant la commande sysctl ou en cherchant la valeur de ip_forward
@@ -116,4 +120,5 @@ root#wireshark
 ![WhatsApp Image 2022-01-09 at 1 34 41 PM](https://user-images.githubusercontent.com/85891554/148683982-89957d90-bcec-4a83-b30d-ee870fa679ca.jpeg)
 les tables arp apres l'attaque 
 
+![WhatsApp Image 2022-01-09 at 1 34 41 PM (2)](https://user-images.githubusercontent.com/85891554/148684361-d9e26b60-781f-406c-b538-43345a2a8517.jpeg)
 
