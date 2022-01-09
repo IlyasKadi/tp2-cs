@@ -65,4 +65,18 @@ L’attaquant inonde le serveur DHCP avec des messages DHCPREQUEST afin de rése
 #make install 
 ```
 ![Capture d’écran 2022-01-09 134631](https://user-images.githubusercontent.com/85891554/148682750-00da8427-69b5-4046-ade8-6229e73eaa12.png)
+
 Sur une autre machine, on va configurer le serveur DHCP
+_ configuration du dhcp _
+
+![Capture d’écran 2022-01-09 135330](https://user-images.githubusercontent.com/85891554/148683028-cbb5c56d-1a0e-49c3-9c7d-2fda018eac72.png)
+
+on observe sur WireShark l'envoie des demandes dhcp (dhcp discover)
+
+![Capture d’écran 2022-01-09 135533](https://user-images.githubusercontent.com/85891554/148683036-7fe8905c-ab02-4d9f-8370-9c0ecd4f64a5.png)
+
+l'assignment des adresses ip
+
+![Capture d’écran 2022-01-09 135433](https://user-images.githubusercontent.com/85891554/148683039-c7dfe30d-00f1-4ff3-ad4b-b6bf9d416c74.png)
+
+# Attaque “Man In The Middle” basée sur l'attaque “ARP spoofing”
