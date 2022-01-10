@@ -121,4 +121,30 @@ root#wireshark
 les tables arp apres l'attaque 
 
 ![WhatsApp Image 2022-01-09 at 1 34 41 PM (2)](https://user-images.githubusercontent.com/85891554/148684361-d9e26b60-781f-406c-b538-43345a2a8517.jpeg)
+# Attaque “usurpation d’identité”
+Dans cette partie, nous utiliserons l'outil « cat Karat packet Builder » :
+Tout d'abord, on choisit l'interface qu'on veut attaquer, puis on choisit le protocole
+et la taille des paquets :
+![Capture d’écran 2022-01-10 000202](https://user-images.githubusercontent.com/85891554/148735360-ce8d50a8-fdee-4d6a-8362-df80abb38147.png)
+## manip 1:
+Maintenant, nous envoyons une requête Arp :
+Nous devons déterminer l'adresse IP et l'adresse Mac de la source et de la destination
+![Capture d’écran 2022-01-10 000202](https://user-images.githubusercontent.com/85891554/148735360-ce8d50a8-fdee-4d6a-8362-df80abb38147.png)
+Nous suivons le trafic en utilisant le wireshark :
+![Capture d’écran 2022-01-10 000221](https://user-images.githubusercontent.com/85891554/148735366-3796d3bc-e52e-4781-83e4-c934c58ce70a.png)
+manip 2:
+Nous devons déterminer l'adresse IP et l'adresse Mac de la source et de la destination
+![Capture d’écran 2022-01-10 000202](https://user-images.githubusercontent.com/85891554/148735360-ce8d50a8-fdee-4d6a-8362-df80abb38147.png)
+![Capture d’écran 2022-01-10 000221](https://user-images.githubusercontent.com/85891554/148735366-3796d3bc-e52e-4781-83e4-c934c58ce70a.png)
+## Attaque “ARP cache poisoning”
+![Capture d’écran 2022-01-10 000249](https://user-images.githubusercontent.com/85891554/148735369-c7635474-7838-4e83-9b60-93562d09dfdf.png)
+![Capture d’écran 2022-01-10 000339](https://user-images.githubusercontent.com/85891554/148735373-55a1d7e9-ac9c-4a6c-b3a5-dd10197398e1.png)
+![Capture d’écran 2022-01-10 000357](https://user-images.githubusercontent.com/85891554/148735376-954c4174-b8fb-4c3c-8553-fd7ef70fe9f4.png)
+![Capture d’écran 2022-01-10 000420](https://user-images.githubusercontent.com/85891554/148735381-e869f6b6-1660-43df-86a4-ed17d075a895.png)
+![Capture d’écran 2022-01-10 000440](https://user-images.githubusercontent.com/85891554/148735388-31b8584e-ff6c-4706-9a1d-fdd485d9c150.png)
+![Capture d’écran 2022-01-10 000504](https://user-images.githubusercontent.com/85891554/148735394-7c8de501-570d-4645-bbb0-ad69998c0ab6.png)
+![Capture d’écran 2022-01-10 000521](https://user-images.githubusercontent.com/85891554/148735401-3c497dca-01c2-4282-a40e-260c3179fcb6.png)
+![Capture d’écran 2022-01-10 000539](https://user-images.githubusercontent.com/85891554/148735411-4cfc233e-db61-4c4c-91bd-7e514e976ea7.png)
+![Capture d’écran 2022-01-10 000609](https://user-images.githubusercontent.com/85891554/148735417-8b972612-a236-49c9-9918-76f26e1ea6d5.png)
 
+# THEEND
